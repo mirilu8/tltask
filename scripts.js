@@ -5,14 +5,20 @@ const list = document.querySelector('.list-task');
 let minhalistadeitens = [];
 
 function addnewtask() {
-    minhalistadeitens.push({
-        task: input.value,
-        concluida: false
-    });
-    input.value = '';
-    mostrartarefas();
-    salvarnoLocalStorage();
+    const inputValor = input.value.trim(); // remove espaços em branco do início e do fim
+    if (inputValor !== '') { // verifica se o input não está vazio
+        minhalistadeitens.push({
+            task: inputValor,
+            concluida: false
+        });
+        input.value = '';
+        mostrartarefas();
+        salvarnoLocalStorage();
+    } else {
+        window.alert('Você precisa digitar algo para adicionar à lista!'); // exibe uma mensagem de alerta se o input estiver vazio
+    }
 }
+
 
 function mostrartarefas() {
     let novali = '';
@@ -57,3 +63,4 @@ function salvarnoLocalStorage() {
 recarregarpagina();
 
 button.addEventListener('click', addnewtask);
+
