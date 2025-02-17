@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
+    
 }
 
 body {
@@ -15,6 +16,17 @@ body {
     border-radius: 20px;
     padding: 20px   ;  
     margin: 100px auto auto;
+    
+
+}
+ 
+
+
+/* Estilos para telas com até 600 pixels de largura */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
 }
 
 .button-task{
